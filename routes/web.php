@@ -17,19 +17,3 @@ use App\Http\Controllers\NominalRollController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
-//Justice
-
-//Dashboards
-Route::get('/dashboard', [NominalRollController::class,'dashboard']);
-Route::get('/retirementdashboard', [NominalRollController::class,'retirementdashboard']);
-
-
-
-///categories
-Route::get('/get-all-staff', [NominalRollController::class, 'getallstaff'])->name('get-allstaff') ;
-Route::get('/show', [NominalRollController::class, 'getallstaff'])->name('nominal.show') ;
-//Route::post('store/asset-categories', [NominalRollController::class, 'storecategory'])->name('store.assetcategory' ) ;
-
