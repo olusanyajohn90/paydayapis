@@ -19,6 +19,7 @@ use App\Http\Controllers\PaydayApiController;
 Route::get('staff', [PaydayApiController::class,'getAllStaff']);
 Route::get('staff/{id}', [PaydayApiController::class,'getStaff']);
 Route::get('wacsstaff/{id}', [PaydayApiController::class,'getWacsStaff']);
+Route::get('getwacsstaffloan/{id}', [PaydayApiController::class,'getWacsStaffLoan']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
