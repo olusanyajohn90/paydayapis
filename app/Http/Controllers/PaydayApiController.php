@@ -70,7 +70,9 @@ class PaydayApiController extends Controller
            ->where('ippis_number', $id)->get()->toJson(JSON_PRETTY_PRINT);
            return response($staff, 200);
          } else {
-           $staff = "no clean record";
+            return response()->json([
+                "message" => "staff not found"
+              ], 404);
          }
 
 
