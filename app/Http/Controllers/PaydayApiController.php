@@ -71,7 +71,7 @@ class PaydayApiController extends Controller
            return response($staff, 200);
          } else {
             return response()->json([
-                "message" => "staff not found"
+                "message" => "staff loan record not found"
               ], 404);
          }
 
