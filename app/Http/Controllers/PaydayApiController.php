@@ -35,7 +35,7 @@ class PaydayApiController extends Controller
          // logic to get a staff record goes here
          if (Cleanpayday::where('employee_number', $id)->exists()) {
             $staff = Cleanpayday::query()
-            ->select(['employee_number', 'first_name',  ])
+            ->select(['employee_number', 'organization', 'first_name', 'middle_name', 'last_name',  ])
             ->where('employee_number', $id)->get()->toJson(JSON_PRETTY_PRINT);
             return response($staff, 200);
           } else {
@@ -45,7 +45,7 @@ class PaydayApiController extends Controller
         // logic to get a staff record goes here
         if ($staff == "no clean record" && Payday::where('employee_number', $id)->exists()) {
             $staff1 = Payday::query()
-            ->select(['employee_number', 'first_name', 'middle_name', 'last_name',  ])
+            ->select(['employee_number', 'organization', 'first_name', 'middle_name', 'last_name',  ])
             ->where('employee_number', $id)->get()->toJson(JSON_PRETTY_PRINT);
             // $staff2 = ([
             //     "message" => "staff not found"
